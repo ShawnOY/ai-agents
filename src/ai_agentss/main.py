@@ -2,9 +2,8 @@
 import sys
 import warnings
 
+from ai_agentss.crew import AiAgents
 from datetime import datetime
-
-from ai_agentss.crew import AiAgentss
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
@@ -18,15 +17,14 @@ def run():
     Run the crew.
     """
     inputs = {
-        'topic': 'AI LLMs',
+        'topic': 'I want a classic game, like Minesweeper, but with a modern twist. The game should be easy to learn, but difficult to master. The game should have a modern aesthetic, with a clean and simple interface. The game should be available on all major platforms, including PC, Mac, and mobile devices.',
         'current_year': str(datetime.now().year)
     }
     
     try:
-        AiAgentss().crew().kickoff(inputs=inputs)
+        AiAgents().crew().kickoff(inputs=inputs)
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
-
 
 def train():
     """
@@ -37,7 +35,7 @@ def train():
         'current_year': str(datetime.now().year)
     }
     try:
-        AiAgentss().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
+        AiAgents().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
 
     except Exception as e:
         raise Exception(f"An error occurred while training the crew: {e}")
@@ -47,8 +45,7 @@ def replay():
     Replay the crew execution from a specific task.
     """
     try:
-        AiAgentss().crew().replay(task_id=sys.argv[1])
-
+        AiAgents().crew().replay(task_id=sys.argv[1])
     except Exception as e:
         raise Exception(f"An error occurred while replaying the crew: {e}")
 
@@ -62,7 +59,7 @@ def test():
     }
     
     try:
-        AiAgentss().crew().test(n_iterations=int(sys.argv[1]), eval_llm=sys.argv[2], inputs=inputs)
+        AiAgents().crew().test(n_iterations=int(sys.argv[1]), eval_llm=sys.argv[2], inputs=inputs)
 
     except Exception as e:
         raise Exception(f"An error occurred while testing the crew: {e}")
