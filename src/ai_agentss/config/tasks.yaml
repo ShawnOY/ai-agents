@@ -129,3 +129,41 @@ jira_task_creation:
 
   agent: project_manager
   context: [project_task_planning]
+
+write_code:
+  description: |
+    ## Write Code Task
+    Write code for the tasks in the Jira project.
+    - The code should be written in the same language as the task description.
+    - The code should be written in a modular and maintainable way.
+    - The code should follow best practices and coding standards.
+    - The code should be well-documented.
+    - The code should include error handling and logging.
+    - The code should be tested and verified.
+    - The code should be optimized for performance.
+    - The code should be secure.
+    - The code should include unit tests.
+    - The code should include integration tests.
+    - The code should include end-to-end tests.
+    - The code should include performance tests.
+    - The code should include security tests.
+    - The code should include usability tests.
+    - The code should include accessibility tests.
+    - The code should include documentation.
+
+  expected_output: |
+    ## Code Writing Results
+    - Full source code
+    - Unit tests
+    - Integration tests
+    - End-to-end tests
+    - Performance tests
+    - Security tests
+    - Usability tests
+    - Accessibility tests
+    - Documentation
+
+  output_file: code_writing_results.md
+
+  agent: fullstack_engineer
+  context: [jira_task_creation]

@@ -75,6 +75,13 @@ class AiAgents:
             verbose=True
         )
 
+    @agent
+    def fullstack_engineer(self) -> Agent:
+        return Agent(
+            config=self.agents_config['fullstack_engineer'],
+            verbose=True
+        )
+
     @task
     def requirements_analysis(self) -> Task:
         return Task(
@@ -110,6 +117,12 @@ class AiAgents:
         return Task(
             config=self.tasks_config['jira_task_creation'],
             tools=tools
+        )
+
+    @task
+    def write_code(self) -> Task:
+        return Task(
+            config=self.tasks_config['write_code'],
         )
 
     @crew
