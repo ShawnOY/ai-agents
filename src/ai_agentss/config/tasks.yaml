@@ -28,7 +28,7 @@ requirements_analysis:
     - Mermaid User Flow Diagram Code
 
   agent: project_manager
-  output_file: requirements_analysis.md
+  output_file: output/requirements_analysis.md
 
 requirements_specification:
   description: |
@@ -50,7 +50,7 @@ requirements_specification:
 
   agent: system_analyst
   context: [requirements_analysis]
-  output_file: requirements_specification.md
+  output_file: output/requirements_specification.md
 
 system_design:
   description: |
@@ -78,7 +78,7 @@ system_design:
 
   agent: architect
   context: [requirements_analysis, requirements_specification]
-  output_file: system_architecture.md
+  output_file: output/system_architecture.md
 
 project_task_planning:
   description: |
@@ -163,7 +163,7 @@ write_code:
     - Accessibility tests
     - Documentation
 
-  output_file: code_writing_results.md
+  output_file: output/code_writing_results.md
 
   agent: fullstack_engineer
   context: [jira_task_creation]
